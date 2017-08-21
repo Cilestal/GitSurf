@@ -18,7 +18,7 @@
             android:title="@string/pref_settings_about">
         <Preference android:title="@string/pref_settings_repo_page" >
             <intent android:action="android.intent.action.VIEW"
-                    android:data="http://github.com/cilestal" />
+                    android:data="https://github.com/Cilestal/GitSurf/tree/master" />
         </Preference>
 
     </PreferenceCategory>
