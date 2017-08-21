@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+            android:title="@string/pref_settings_title">
+        <ListPreference
+                android:key="pref_code_style"
+                android:title="@string/pref_code_style_title"
+                android:dialogTitle="@string/pref_code_style_title"
+                android:entries="@array/pref_code_style_entries"
+                android:entryValues="@array/pref_code_style_entries"
+                android:defaultValue="@string/pref_code_style_github"
+                android:icon="@drawable/ic_style">
+
+        </ListPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/pref_settings_about">
+        <Preference android:title="@string/pref_settings_repo_page" >
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="http://github.com/cilestal" />
+        </Preference>
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

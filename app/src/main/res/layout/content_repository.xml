@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin"
+                android:layout_marginEnd="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_small_margin"
+                style="@style/CardView">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/components_margin">
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/content_repository_avatar_IV"
+                            android:layout_width="@dimen/extra_small_user_avatar"
+                            android:layout_height="@dimen/extra_small_user_avatar"
+                            tools:src="@drawable/ic_user_avatar"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_title_TV"
+                            android:paddingStart="@dimen/components_padding"
+                            android:paddingEnd="@dimen/components_padding"
+                            android:textColor="@color/colorPrimaryDark"
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:text="Repository title"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_description_TV"
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_marginTop="@dimen/components_small_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="3"
+                            tools:text="description"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_update_at_TV"
+                            tools:text="updated"
+                            android:layout_marginTop="@dimen/components_small_margin"
+                            style="@style/Base.TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_language_TV"
+                            tools:text="language"
+                            android:layout_marginTop="@dimen/components_small_margin"
+                            style="@style/Base.TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:paddingTop="@dimen/components_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false">
+
+                    <LinearLayout
+                            android:id="@+id/content_repository_forks_layout"
+
+                            android:clickable="true"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/content_repository_forks_TV"
+                                android:text="@string/zero"
+                                android:textColor="@color/colorPrimaryDark"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:text="@string/forks"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:id="@+id/content_repository_stargazers_layout"
+                            android:clickable="true"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/content_repository_stargazers_TV"
+                                android:text="@string/zero"
+                                android:textColor="@color/colorPrimaryDark"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:text="@string/stargazers"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/content_repository_pulls_layout"
+                            android:clickable="true"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/content_repository_pulls_TV"
+                                android:text="@string/zero"
+                                android:textColor="@color/colorPrimaryDark"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:text="@string/pulls"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/content_repository_issues_layout"
+                            android:clickable="true"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/content_repository_issues_TV"
+                                android:text="@string/zero"
+                                android:textColor="@color/colorPrimaryDark"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:text="@string/issues"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin"
+                android:layout_marginEnd="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_small_margin"
+                android:layout_marginBottom="@dimen/card_small_margin"
+                style="@style/CardView">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RelativeLayout
+                        android:id="@+id/content_repository_code_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="@dimen/components_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            app:srcCompat="@drawable/ic_code"
+                            android:id="@+id/content_repository_code_IV"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_marginStart="@dimen/components_margin"
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:id="@+id/content_repository_code_TV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/code"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/content_repository_code_IV"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_alignEnd="@id/content_repository_code_TV"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_arrow_left_grey"/>
+                </RelativeLayout>
+
+                <View style="@style/AppTheme.HorizontalDivider"/>
+
+                <RelativeLayout
+                        android:id="@+id/content_repository_watchers_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="@dimen/components_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            app:srcCompat="@drawable/ic_watchers"
+                            android:id="@+id/content_repository_watchers_IV"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_marginStart="@dimen/components_margin"
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:id="@+id/content_repository_watchers_TV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/watchers"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/content_repository_watchers_IV"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_alignEnd="@id/content_repository_watchers_TV"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_arrow_left_grey"/>
+                </RelativeLayout>
+
+                <View style="@style/AppTheme.HorizontalDivider"/>
+
+                <RelativeLayout
+                        android:id="@+id/content_repository_contributors_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:padding="@dimen/components_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/content_repository_contributors_IV"
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            app:srcCompat="@drawable/ic_contributors"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_contributors_TV"
+                            android:layout_marginStart="14dp"
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contributors"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/content_repository_contributors_IV"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_alignEnd="@id/content_repository_contributors_TV"
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            app:srcCompat="@drawable/ic_arrow_left_grey"
+                            android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+
+                <View style="@style/AppTheme.HorizontalDivider"/>
+
+                <LinearLayout
+                        android:id="@+id/content_repository_collaborators_layout"
+                        android:visibility="gone"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:padding="@dimen/components_padding">
+
+                        <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_size"
+                                android:layout_height="@dimen/icon_size"
+                                android:id="@+id/content_repository_collaborators_IV"
+                                app:srcCompat="@drawable/ic_collaborators"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                                android:layout_marginStart="@dimen/components_margin"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/content_repository_collaborators_IV"
+                                android:text="@string/collaborators"/>
+
+                        <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/icon_size"
+                                android:layout_height="@dimen/icon_size"
+                                app:srcCompat="@drawable/ic_arrow_left_grey"
+                                android:layout_alignEnd="@id/content_repository_collaborators_IV"
+                                android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <View style="@style/AppTheme.HorizontalDivider"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                        android:id="@+id/content_repository_commits_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="@dimen/components_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:id="@+id/content_repository_commits_IV"
+                            app:srcCompat="@drawable/ic_commit"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_commits_TV"
+                            android:layout_marginStart="12dp"
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/commits"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/content_repository_commits_IV"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            app:srcCompat="@drawable/ic_arrow_left_grey"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignEnd="@id/content_repository_commits_TV"/>
+                </RelativeLayout>
+
+                <View style="@style/AppTheme.HorizontalDivider"/>
+
+                <RelativeLayout
+                        android:id="@+id/content_repository_branches_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="@dimen/components_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:id="@+id/content_repository_branches_IV"
+                            app:srcCompat="@drawable/ic_branches"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/content_repository_branches_TV"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/content_repository_branches_IV"
+                            android:layout_marginStart="@dimen/components_margin"
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/branches"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignEnd="@id/content_repository_branches_TV"
+                            app:srcCompat="@drawable/ic_arrow_left_grey"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/content_repository_readme_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin"
+                android:layout_marginEnd="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_small_margin"
+                android:layout_marginBottom="@dimen/card_small_margin"
+                android:visibility="gone"
+                style="@style/CardView">
+
+            <LinearLayout
+                    android:layout_marginTop="@dimen/components_margin"
+                    android:layout_marginStart="@dimen/components_margin"
+                    android:layout_marginEnd="@dimen/components_margin"
+
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            app:srcCompat="@drawable/ic_bio"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/components_margin"
+                            android:layout_marginEnd="@dimen/components_margin"
+                            android:text="@string/readme"/>
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/content_repository_readme_TV"
+                        android:paddingTop="@dimen/components_medium_padding"
+                        android:paddingStart="@dimen/components_medium_padding"
+                        android:paddingEnd="@dimen/components_medium_padding"
+                        tools:text="readme content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

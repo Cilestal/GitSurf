@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/menu_repository_watch"
+            android:icon="@drawable/ic_menu_watch"
+            android:title="@string/menu_watch"
+            android:visible="false"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/menu_repository_star"
+            android:icon="@drawable/ic_menu_star"
+            android:title="@string/menu_star"
+            android:visible="false"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/menu_repository_fork"
+            android:icon="@drawable/ic_menu_fork"
+            android:title="@string/menu_fork"
+            android:visible="false"
+            app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/menu_repository_download"
+            android:title="@string/menu_download"/>
+
+
+</menu>

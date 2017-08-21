@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ua.dp.michaellang.gitsurf">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+            android:name=".GitSurfApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:fullBackupContent="true">
+
+        <activity
+                android:name=".view.login.LoginActivity"
+                android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".view.events.EventsActivity"
+                android:label="@string/news_title"/>
+
+        <activity android:name=".view.users.UserActivity"/>
+
+        <activity android:name=".view.users.UserListActivity"/>
+        <activity
+                android:name=".view.search.SearchUserActivity"
+                android:label="@string/users_search_title"/>
+
+        <activity
+                android:name=".view.repos.RepositoryListActivity"
+                android:label="@string/my_repo_title"/>
+
+        <activity
+                android:name=".view.starred.StarredActivity"
+                android:label="@string/my_stars_title"/>
+
+        <activity
+                android:name=".view.search.SearchRepositoryActivity"
+                android:label="@string/search_repos_title"/>
+        <activity
+                android:name=".view.issues.IssueListActivity"
+                android:label="@string/my_issues_title"/>
+
+        <activity
+                android:name=".view.gists.GistsActivity"
+                android:label="@string/my_gists_title"/>
+
+        <activity android:name=".view.repos.RepositoryActivity"/>
+        <activity android:name=".view.repos.ForkListActivity"/>
+        <activity android:name=".view.repos.CommitListActivity"/>
+        <activity android:name=".view.repos.RepositoryFilesActivity"/>
+        <activity android:name=".view.repos.FileActivity"/>
+
+        <activity
+                android:name=".view.settings.SettingsActivity"
+                android:label="@string/pref_settings_title"/>
+
+        <receiver android:name=".ReceiverDownloadNotification">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+                <!--<action android:name="android.intent.action.DOWNLOAD_COMPLETE" />-->
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

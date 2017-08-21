@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4078c0</color>
+
+    <color name="colorOpened">@android:color/holo_green_light</color>
+    <color name="colorClosed">@android:color/holo_red_light</color>
+
+    <color name="color_ripple">#ffffff</color>
+
+    <color name="icon_light_grey_color">#616161</color>
+
+    <color name="menu_item">#FFFFFFFF</color>
+</resources>

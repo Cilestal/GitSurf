@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group  android:id="@+id/menu_left_drawer_top"
+            android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/navigation_news"
+                android:icon="@drawable/ic_event"
+                android:title="@string/menu_news"/>
+
+        <item
+                android:id="@+id/navigation_my_repo"
+                android:icon="@drawable/ic_repos"
+                android:title="@string/menu_my_repo"/>
+
+        <item
+                android:id="@+id/navigation_my_starred"
+                android:icon="@drawable/ic_star"
+                android:title="@string/menu_my_starred"/>
+
+        <item
+                android:id="@+id/navigation_my_gists"
+                android:icon="@drawable/ic_code"
+                android:title="@string/menu_my_gists"/>
+
+        <item
+                android:id="@+id/navigation_my_issues"
+                android:icon="@drawable/ic_issue_opened"
+                android:title="@string/menu_my_issues"/>
+
+        <item
+                android:id="@+id/navigation_my_pull_request"
+                android:icon="@drawable/ic_pull_request"
+                android:title="@string/menu_my_pull_request"/>
+
+    </group>
+
+    <item android:title="@string/menu_public_search">
+        <menu>
+            <group
+                    android:id="@+id/menu_left_drawer_middle"
+                    android:checkableBehavior="single">
+                <item
+                        android:id="@+id/navigation_search_users"
+                        android:icon="@drawable/ic_organization"
+                        android:title="@string/menu_users"/>
+
+                <item
+                        android:id="@+id/navigation_public_repos"
+                        android:icon="@drawable/ic_public_repos"
+                        android:title="@string/menu_public_repos"/>
+            </group>
+        </menu>
+
+    </item>
+
+    <group
+            android:id="@+id/menu_left_drawer_bottom"
+            android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/navigation_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/menu_settings"/>
+
+        <item
+                android:id="@+id/navigation_logout"
+                android:icon="@drawable/ic_sign_out"
+                android:title="@string/menu_logout"/>
+
+    </group>
+
+</menu>

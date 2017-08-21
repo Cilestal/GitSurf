@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin"
+        android:layout_marginEnd="@dimen/card_margin"
+        android:layout_marginTop="@dimen/card_small_margin"
+        android:layout_marginBottom="@dimen/card_small_margin"
+        style="@style/CardView">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/item_repository_layout"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/components_padding"
+            android:paddingStart="@dimen/components_padding"
+            android:paddingEnd="@dimen/components_padding"
+            android:paddingBottom="@dimen/components_medium_padding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_repository_title_TV"
+                android:textColor="@color/colorPrimaryDark"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Repository title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_repository_description_TV"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="description"
+                android:layout_marginTop="@dimen/components_small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_title_TV"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_repository_update_time_TV"
+                tools:text="updated"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_width="0dp"
+                android:maxWidth="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/components_medium_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_description_TV"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_repository_language_TV"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                tools:text="Language"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/components_medium_margin"
+                android:textAlignment="textEnd"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_description_TV"
+                app:layout_constraintRight_toLeftOf="@+id/item_repository_fork_IV"
+                android:layout_marginRight="8dp"
+                app:layout_constraintLeft_toRightOf="@+id/item_repository_update_time_TV"
+                android:layout_marginLeft="@dimen/components_medium_margin"/>
+
+        <android.support.v7.widget.AppCompatImageView
+                app:srcCompat="@drawable/ic_fork"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginTop="@dimen/components_small_margin"
+                android:id="@+id/item_repository_fork_IV"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_description_TV"
+                app:layout_constraintRight_toLeftOf="@+id/item_repository_forks_TV"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_repository_forks_TV"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                tools:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/components_medium_margin"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_description_TV"
+                app:layout_constraintRight_toLeftOf="@+id/item_search_repository_star_IV"
+                android:layout_marginRight="@dimen/components_margin"/>
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                app:srcCompat="@drawable/ic_star"
+                android:layout_marginTop="@dimen/components_small_margin"
+                android:id="@+id/item_search_repository_star_IV"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_description_TV"
+                app:layout_constraintRight_toLeftOf="@+id/item_repository_stars_TV"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_repository_stars_TV"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                tools:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/components_medium_margin"
+                app:layout_constraintTop_toBottomOf="@+id/item_repository_description_TV"
+                app:layout_constraintRight_toRightOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

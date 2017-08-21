@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin"
+        android:layout_marginEnd="@dimen/card_margin"
+        android:layout_marginTop="@dimen/card_small_margin"
+        android:layout_marginBottom="@dimen/card_small_margin"
+        style="@style/CardView">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/item_user_layout"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/item_user_avatar_IV"
+                android:layout_width="@dimen/small_user_avatar"
+                android:layout_height="@dimen/small_user_avatar"
+                android:layout_margin="@dimen/components_margin"
+                tools:src="@drawable/ic_user_avatar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_user_login_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                tools:text="Username"
+                app:layout_constraintLeft_toRightOf="@+id/item_user_avatar_IV"
+                app:layout_constraintTop_toTopOf="@+id/item_user_avatar_IV"
+                android:layout_marginLeft="@dimen/components_margin"/>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin"
+        android:layout_marginEnd="@dimen/card_margin"
+        android:layout_marginTop="@dimen/card_small_margin"
+        android:layout_marginBottom="@dimen/card_small_margin">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/item_events_layout"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/item_events_avatar_IV"
+                app:srcCompat="@drawable/ic_user_avatar"
+                android:layout_width="@dimen/extra_small_user_avatar"
+                android:layout_height="@dimen/extra_small_user_avatar"
+                android:layout_marginStart="@dimen/components_margin"
+                android:layout_marginEnd="@dimen/components_margin"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                />
+
+        <TextView
+                android:id="@+id/item_events_login_TV"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="UserName"
+                app:layout_constraintLeft_toRightOf="@+id/item_events_avatar_IV"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintTop_toTopOf="@+id/item_events_avatar_IV"
+                android:layout_marginTop="0dp"
+                app:layout_constraintRight_toLeftOf="@+id/item_events_time_TV"
+                android:layout_marginRight="16dp"/>
+
+        <TextView
+                android:id="@+id/item_events_time_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="time"
+                app:layout_constraintBaseline_toBaselineOf="@+id/item_events_login_TV"
+                android:layout_marginRight="16dp"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <TextView
+                android:id="@+id/item_events_description_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Description"
+                android:layout_marginRight="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/item_events_avatar_IV"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/item_events_login_TV"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

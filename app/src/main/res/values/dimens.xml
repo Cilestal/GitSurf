@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_bar_height">256dp</dimen>
+    <dimen name="app_bar_collapsing_title_margin_end">64dp</dimen>
+    <dimen name="app_bar_collapsing_title_margin_start">48dp</dimen>
+
+    <dimen name="nav_header_height">120dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+
+    <dimen name="small_user_avatar">48dp</dimen>
+    <dimen name="extra_small_user_avatar">32dp</dimen>
+
+    <dimen name="large_icon_size">48dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="small_icon_size">20dp</dimen>
+
+    <dimen name="components_margin">16dp</dimen>
+    <dimen name="components_medium_margin">8dp</dimen>
+    <dimen name="components_small_margin">4dp</dimen>
+    <dimen name="components_padding">16dp</dimen>
+    <dimen name="components_medium_padding">8dp</dimen>
+    <dimen name="components_small_padding">4dp</dimen>
+
+    <dimen name="card_margin">12dp</dimen>
+    <dimen name="card_small_margin">4dp</dimen>
+    <dimen name="toolbar_collapsing_scrim_height">160dp</dimen>
+
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:title="@string/issues_state"
+            android:icon="@drawable/ic_menu_state"
+            android:checkable="true"
+            app:showAsAction="always">
+        <menu>
+            <group
+                    android:checkableBehavior="single">
+                <item
+                        android:id="@+id/menu_issues_state_opened"
+                        android:checked="true"
+                        android:title="@string/issues_opened"/>
+
+                <item
+                        android:id="@+id/menu_issues_state_closed"
+                        android:title="@string/issues_closed"/>
+
+                <item
+                        android:id="@+id/menu_issues_state_all"
+                        android:title="@string/issues_all"/>
+            </group>
+        </menu>
+    </item>
+
+    <item
+            android:title="@string/menu_sort"
+            android:icon="@drawable/ic_menu_sort"
+            app:showAsAction="ifRoom|collapseActionView">
+        <menu>
+            <group
+                    android:checkableBehavior="single">
+
+                <item
+                        android:id="@+id/menu_issues_sort_created_desc"
+                        android:checked="true"
+                        android:title="@string/issues_created_desc"/>
+
+                <item
+                        android:id="@+id/menu_issues_sort_created_asc"
+                        android:title="@string/issues_created_asc"/>
+
+                <item
+                        android:id="@+id/menu_issues_sort_comments_desc"
+                        android:title="@string/issues_comments_desc"/>
+
+                <item
+                        android:id="@+id/menu_issues_sort_comments_asc"
+                        android:title="@string/issues_comments_asc"/>
+
+                <item
+                        android:id="@+id/menu_issues_sort_updated_desc"
+                        android:title="@string/issues_updated_desc"/>
+
+                <item
+                        android:id="@+id/menu_issues_sort_updated_asc"
+                        android:title="@string/issues_updated_asc"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>

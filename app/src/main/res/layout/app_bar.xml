@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/toolbar_spinner"
+                android:visibility="gone"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"/>
+
+        <ProgressBar
+                android:id="@+id/toolbar_progress_bar"
+                android:indeterminate="true"
+                android:layout_marginRight="@dimen/components_margin"
+                android:layout_marginEnd="@dimen/components_margin"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:progressDrawable="@android:color/white"
+                android:layout_gravity="end"/>
+
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>

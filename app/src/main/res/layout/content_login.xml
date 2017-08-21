@@ -1,0 +1,80 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/components_margin"
+            android:paddingLeft="@dimen/components_margin"
+            android:paddingRight="@dimen/components_margin"
+            android:paddingTop="@dimen/components_margin"
+            android:fitsSystemWindows="true"
+            tools:context="ua.dp.michaellang.gitsurf.view.owner.LoginActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/content_login_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_username"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/content_login_password"
+                    android:maxLines="1"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/content_login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeActionId="@+id/name"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLines="1"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+                android:id="@+id/content_login_sign_in_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/components_margin"
+                android:text="@string/action_sign_in"
+                android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatButton
+                android:id="@+id/content_login_oauth2_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/components_margin"
+                android:text="@string/action_sign_in_with_github"
+                android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/content_login_forgot_password_button"
+                android:paddingTop="@dimen/components_padding"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="@string/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</ScrollView>

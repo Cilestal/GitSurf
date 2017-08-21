@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="issues_spinner_list_items">
+        <item>@string/issues_created</item>
+        <item>@string/issues_assigned</item>
+        <item>@string/issues_mentioned</item>
+    </string-array>
+
+    <string-array name="pull_request_spinner_list_items">
+        <item>@string/pull_request_created</item>
+        <item>@string/pull_request_assigned</item>
+        <item>@string/pull_request_mentioned</item>
+    </string-array>
+
+    <string-array name="pref_code_style_entries">
+        <item>@string/pref_code_style_default</item>
+        <item>@string/pref_code_style_agate</item>
+        <item>@string/pref_code_style_android_studio</item>
+        <item>@string/pref_code_style_arduino_light</item>
+        <item>@string/pref_code_style_arta</item>
+        <item>@string/pref_code_style_ascetic</item>
+        <item>@string/pref_code_style_atelier_dark</item>
+        <item>@string/pref_code_style_atelier_light</item>
+        <item>@string/pref_code_style_atelier_fores</item>
+        <item>@string/pref_code_style_dark_style</item>
+        <item>@string/pref_code_style_drakula</item>
+        <item>@string/pref_code_style_docco</item>
+        <item>@string/pref_code_style_far</item>
+        <item>@string/pref_code_style_github</item>
+        <item>@string/pref_code_style_github_gist</item>
+        <item>@string/pref_code_style_google_code</item>
+        <item>@string/pref_code_style_idea</item>
+        <item>@string/pref_code_style_magula</item>
+        <item>@string/pref_code_style_obsidian</item>
+        <item>@string/pref_code_style_xcode</item>
+    </string-array>
+</resources>

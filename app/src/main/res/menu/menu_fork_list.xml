@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:title="@string/menu_sort"
+            android:icon="@drawable/ic_menu_sort"
+            app:showAsAction="ifRoom|collapseActionView">
+        <menu>
+            <group
+                    android:checkableBehavior="single">
+                <item
+                        android:id="@+id/menu_fork_list_sort_newest"
+                        android:checked="true"
+                        android:title="@string/fork_list_sort_newest"/>
+
+                <item
+                        android:id="@+id/menu_fork_list_sort_oldest"
+                        android:title="@string/fork_list_sort_oldest"/>
+
+                <item
+                        android:id="@+id/menu_fork_list_sort__stargazers"
+                        android:title="@string/fork_list_sort_stargazers"/>
+
+            </group>
+        </menu>
+    </item>
+</menu>
