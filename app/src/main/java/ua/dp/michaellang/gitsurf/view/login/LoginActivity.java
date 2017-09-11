@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
@@ -22,8 +23,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnEditorAction;
-import org.eclipse.egit.github.core.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GithubAuthProvider;
 import ua.dp.michaellang.gitsurf.Constants;
+import ua.dp.michaellang.gitsurf.GitSurfApplication;
 import ua.dp.michaellang.gitsurf.R;
 import ua.dp.michaellang.gitsurf.presenter.login.LoginPresenter;
 import ua.dp.michaellang.gitsurf.presenter.login.LoginPresenterImpl;
@@ -57,13 +65,13 @@ public class LoginActivity extends ToolbarActivity implements LoginView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (SPUtil.isAuthorized(this)) {
+        if (GitSurfApplication.isAuthorized()) {
             goToTopLevelActivity();
         }
 
         setContent(R.layout.content_login);
         showHomeButton();
-        mPresenter = new LoginPresenterImpl(this, this);
+        mPresenter = new LoginPresenterImpl(this);
         ButterKnife.bind(LoginActivity.this);
     }
 
@@ -156,20 +164,30 @@ public class LoginActivity extends ToolbarActivity implements LoginView {
     }
 
     @Override
-    public void onLoginSuccess(String token) {
+    public void onLoginSuccess(final String token) {
         Log.d(TAG, "Auth Complete.");
-        SPUtil.putString(this, Constants.Prefs.User.TOKEN, token);
-        mPresenter.loadUser();
-    }
+        AuthCredential credential = GithubAuthProvider.getCredential(token);
+        FirebaseAuth.getInstance()
+                .signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        String username = task.getResult()
+                                .getAdditionalUserInfo()
+                                .getUsername();
 
-    @Override
-    public void onUserLoaded(User user) {
-        SPUtil.putString(this, Constants.Prefs.User.LOGIN, user.getLogin());
-        SPUtil.putString(this, Constants.Prefs.User.NAME, user.getName());
-        SPUtil.putString(this, Constants.Prefs.User.EMAIL, user.getEmail());
-        SPUtil.putString(this, Constants.Prefs.User.AVATAR, user.getAvatarUrl());
+                        SPUtil.putString(LoginActivity.this, Constants.Prefs.User.TOKEN, token);
+                        SPUtil.putString(LoginActivity.this, Constants.Prefs.User.LOGIN, username);
 
-        goToTopLevelActivity();
+                        goToTopLevelActivity();
+                    }
+                })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        onAuthError();
+                    }
+                });
     }
 
     @Override

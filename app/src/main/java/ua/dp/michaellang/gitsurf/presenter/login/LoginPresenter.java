@@ -10,6 +10,4 @@ import ua.dp.michaellang.gitsurf.presenter.BasePresenter;
 public interface LoginPresenter extends BasePresenter{
     void auth(String login, String password);
     void auth(String code);
-
-    void loadUser();
 }

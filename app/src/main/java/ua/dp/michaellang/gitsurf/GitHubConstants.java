@@ -6,9 +6,9 @@ package ua.dp.michaellang.gitsurf;
  * @author Michael Lang
  */
 public interface GitHubConstants {
-    String CLIENT_ID = "3dac8a454cbbf04ec125";
-    String CLIENT_SECRET = "a645f0bfbb0d4f969184207091104d1e1769845c";
-    String CALLBACK_URL = "https://github.com/Cilestal";
+    String CLIENT_ID = "aacdededd237796b1096";
+    String CLIENT_SECRET = "3789f46836c6d8ea2e47ecb0527ed93e20d45673";
+    String CALLBACK_URL = "https://testproject-4b7c0.firebaseapp.com/__/auth/handler";
 
     String APP_TITLE = "GitSurf";
     String APP_URL = "https://github.com/Cilestal/";

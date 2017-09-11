@@ -35,6 +35,7 @@ public class TaskResult<T> {
         }
 
         return "No authentication challenges found".equalsIgnoreCase(mException.getMessage()) ||
-                "Received authentication challenge is null".equalsIgnoreCase(mException.getMessage());
+                "Received authentication challenge is null".equalsIgnoreCase(mException.getMessage()) ||
+                "Bad credentials (401)".equalsIgnoreCase(mException.getMessage());
     }
 }

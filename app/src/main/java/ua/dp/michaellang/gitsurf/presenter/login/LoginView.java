@@ -2,7 +2,6 @@ package ua.dp.michaellang.gitsurf.presenter.login;
 
 import android.support.annotation.StringRes;
 import android.support.v4.app.LoaderManager;
-import org.eclipse.egit.github.core.User;
 import ua.dp.michaellang.gitsurf.presenter.BaseView;
 
 /**
@@ -11,7 +10,6 @@ import ua.dp.michaellang.gitsurf.presenter.BaseView;
  * @author Michael Lang
  */
 public interface LoginView extends BaseView {
-    void onUserLoaded(User user);
     LoaderManager getLoader();
 
     void onLoginSuccess(String token);

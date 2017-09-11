@@ -19,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import org.eclipse.egit.github.core.Repository;
+import ua.dp.michaellang.gitsurf.GitSurfApplication;
 import ua.dp.michaellang.gitsurf.R;
 import ua.dp.michaellang.gitsurf.presenter.repos.RepositoryImpl;
 import ua.dp.michaellang.gitsurf.presenter.repos.RepositoryPresenter;
@@ -81,7 +82,7 @@ public class RepositoryActivity extends ToolbarActivity
         setContent(R.layout.content_repository);
         ButterKnife.bind(this);
 
-        mIsAuthorized = SPUtil.isAuthorized(this);
+        mIsAuthorized = GitSurfApplication.isAuthorized();
 
         loadExtra();
         setToolbarTitle(getString(R.string.repo_title, mOwner, mRepoName));

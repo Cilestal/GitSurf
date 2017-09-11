@@ -56,7 +56,4 @@ public final class SPUtil {
         return null;
     }
 
-    public static boolean isAuthorized(Context context) {
-        return getAuthLogin(context) != null && getAuthToken(context) != null;
-    }
 }

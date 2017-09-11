@@ -1,18 +1,15 @@
 package ua.dp.michaellang.gitsurf.presenter.login;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v4.os.AsyncTaskCompat;
 import com.google.gson.Gson;
 import okhttp3.*;
 import org.eclipse.egit.github.core.Authorization;
-import org.eclipse.egit.github.core.User;
 import org.eclipse.egit.github.core.client.GitHubClient;
 import org.eclipse.egit.github.core.service.OAuthService;
 import ua.dp.michaellang.gitsurf.GitHubConstants;
 import ua.dp.michaellang.gitsurf.R;
-import ua.dp.michaellang.gitsurf.loader.callbacks.UserLoaderCallbacks;
 import ua.dp.michaellang.gitsurf.presenter.BasePresenterImpl;
 import ua.dp.michaellang.gitsurf.services.entity.Token;
 
@@ -32,20 +29,11 @@ public class LoginPresenterImpl extends BasePresenterImpl
 
     public static final String TAG = LoginPresenterImpl.class.toString();
 
-    private static final int LOADER_USER = 0;
-
     private final LoginView mView;
-    private final UserLoaderCallbacks mCallbacks;
 
-    public LoginPresenterImpl(Context context, LoginView view) {
+    public LoginPresenterImpl(LoginView view) {
         super(view);
         mView = view;
-        mCallbacks = new UserLoaderCallbacks(this, context, null) {
-            @Override
-            protected void onResultReady(int id, User result) {
-                mView.onUserLoaded(result);
-            }
-        };
     }
 
     @Override
@@ -112,12 +100,6 @@ public class LoginPresenterImpl extends BasePresenterImpl
         Token token = gson.fromJson(jsonData, Token.class);
 
         return token.getAccess_token();
-    }
-
-    @Override
-    public void loadUser() {
-        mView.getLoader()
-                .initLoader(LOADER_USER, null, mCallbacks);
     }
 
     private class AuthTask extends AsyncTask<String, Void, String> {

@@ -54,7 +54,11 @@ dependencies {
 
     compile 'Codeview-1.0.0:webviewcode:1.0.0'
 
+    compile 'com.google.firebase:firebase-auth:11.2.2'
+
     compile project(':breadcrumbs')
 
     testCompile 'junit:junit:4.12'
 }
+
+apply plugin: 'com.google.gms.google-services'

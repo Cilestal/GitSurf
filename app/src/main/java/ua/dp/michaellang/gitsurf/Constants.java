@@ -7,7 +7,6 @@ package ua.dp.michaellang.gitsurf;
  */
 public interface Constants {
     int PAGE_ITERATOR_SIZE = 50;
-    int EXIT_TIME_INTERVAL = 2000;
 
     interface Prefs {
         String PREF_NAME = "GitSurfPreferences";
@@ -15,9 +14,6 @@ public interface Constants {
 
         interface User {
             String LOGIN = "USER_LOGIN";
-            String NAME = "USER_NAME";
-            String EMAIL = "EMAIL";
-            String AVATAR = "AVATAR";
             String TOKEN = "USER_TOKEN";
         }
     }

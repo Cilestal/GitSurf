@@ -11,7 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import ua.dp.michaellang.gitsurf.Constants;
+import ua.dp.michaellang.gitsurf.GitSurfApplication;
 import ua.dp.michaellang.gitsurf.R;
 import ua.dp.michaellang.gitsurf.utils.ImageUtil;
 import ua.dp.michaellang.gitsurf.utils.SPUtil;
@@ -73,10 +76,12 @@ public class LeftDrawerActivity extends BaseActivity
     }
 
     private void loadNavViewHeader() {
-        if (SPUtil.isAuthorized(this)) {
+        if (GitSurfApplication.isAuthorized()) {
             mDrawerLogin.setText(SPUtil.getValue(this, Constants.Prefs.User.LOGIN));
-            mDrawerName.setText(SPUtil.getValue(this, Constants.Prefs.User.NAME));
-            String avatarUrl = SPUtil.getValue(this, Constants.Prefs.User.AVATAR);
+
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            mDrawerName.setText(currentUser.getDisplayName());
+            String avatarUrl = currentUser.getPhotoUrl().toString();
 
             ImageUtil.loadUserCircleAvatar(this, mDrawerAvatar, avatarUrl);
 
@@ -91,7 +96,7 @@ public class LeftDrawerActivity extends BaseActivity
     }
 
     private void initNavView() {
-        if (SPUtil.isAuthorized(this)) {
+        if (GitSurfApplication.isAuthorized()) {
             mNavigationView.inflateMenu(R.menu.menu_left_drawer);
         } else {
             mNavigationView.inflateMenu(R.menu.menu_left_drawer_base);
@@ -105,7 +110,7 @@ public class LeftDrawerActivity extends BaseActivity
 
         switch (id) {
             case R.id.navigation_logout:
-                logout();
+                GitSurfApplication.logout(this);
                 goToTopLevelActivity();
                 break;
             case R.id.navigation_sign_in:

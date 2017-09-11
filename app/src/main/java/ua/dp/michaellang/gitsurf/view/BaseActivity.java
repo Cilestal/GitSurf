@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import ua.dp.michaellang.gitsurf.GitSurfApplication;
 import ua.dp.michaellang.gitsurf.R;
 import ua.dp.michaellang.gitsurf.presenter.BaseView;
-import ua.dp.michaellang.gitsurf.utils.SPUtil;
 import ua.dp.michaellang.gitsurf.view.login.LoginActivity;
 import ua.dp.michaellang.gitsurf.view.users.UserActivity;
 
@@ -93,7 +92,7 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
     }
 
     protected final Intent getTopActivity() {
-        if (SPUtil.isAuthorized(this)) {
+        if (GitSurfApplication.isAuthorized()) {
             return UserActivity.newIntent(this);
         } else {
             return LoginActivity.newIntent(this);
@@ -102,7 +101,7 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
 
     @Override
     public void onAuthError() {
-        logout();
+        GitSurfApplication.logout(this);
         if (mSwipeLayout != null) {
             mSwipeLayout.setEnabled(false);
         }
@@ -174,10 +173,6 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
                         mContentRoot.setVisibility(show ? View.GONE : View.VISIBLE);
                     }
                 });
-    }
-
-    protected void logout() {
-        GitSurfApplication.getInstance().logout();
     }
 
 /*    @Override

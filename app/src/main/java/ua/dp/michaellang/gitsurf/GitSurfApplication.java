@@ -1,8 +1,10 @@
 package ua.dp.michaellang.gitsurf;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import com.google.firebase.auth.FirebaseAuth;
 import org.eclipse.egit.github.core.client.GitHubClient;
 import org.eclipse.egit.github.core.service.*;
 import ua.dp.michaellang.gitsurf.services.GitSurfRepositoryService;
@@ -80,12 +82,19 @@ public final class GitSurfApplication extends Application
         return mServices.get(service);
     }
 
-    public void logout() {
-        SPUtil.getPrefs(this)
+    public static void logout(Context context) {
+        SPUtil.getPrefs(context)
                 .edit()
                 .remove(Constants.Prefs.User.LOGIN)
                 .remove(Constants.Prefs.User.TOKEN)
                 .apply();
+
+        FirebaseAuth.getInstance()
+                .signOut();
+    }
+
+    public static boolean isAuthorized() {
+        return FirebaseAuth.getInstance().getCurrentUser() != null;
     }
 
     @Override
